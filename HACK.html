@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    </head>
+
+<body>
+
+
+    <p id="demo">YOUR DATA WAS HACK!!!</p>
+
+
+    <button onclick="myFunction()">Click Me!</button>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $("p").css("color", "red").css("font-size", "100px")
+
+            $("p").hide();
+
+            $("button").click(function() {
+
+                $("p").show();
+
+                $("button").hide();
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
