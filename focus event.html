@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("input").focus(function() {
+                $(this).css("background-color", "pink");
+            });
+            $("input").blur(function() {
+                $(this).css("background-color", "violet");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    Name: <input type="text" name="fullname"><br><br> Email: <input type="text" name="email"><br><br> Conetect No : <input type="text" name="contect no" id="textcontect no"><br><br> Birth Date : <input type="date" name="birth date" id="textbirthdate"><br><br>
+
+
+</body>
+
+</html>

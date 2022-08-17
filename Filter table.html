@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #e29090;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #e76d6d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Filterable Table</h2>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Contect No.</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>Vishva</td>
+                <td>Prajapati</td>
+                <td>vishva@gmail.com</td>
+                <td>8766445528</td>
+            </tr>
+            <tr>
+                <td>Diya</td>
+                <td>Patel</td>
+                <td>diya22@gmail.com</td>
+                <td>9765842288</td>
+            </tr>
+            <tr>
+                <td>krishna</td>
+                <td>Prajapati</td>
+                <td>krishna24@gmail.com</td>
+                <td>5577668844</td>
+            </tr>
+            <tr>
+                <td>Anja</td>
+                <td>Dalvadi</td>
+                <td>anja20@gmail.com</td>
+                <td>9988774455</td>
+            </tr>
+            <tr>
+                <td>Anand</td>
+                <td>patel</td>
+                <td>anand20@gmail.com</td>
+                <td>9988774455</td>
+            </tr>
+            <tr>
+                <td>Parth</td>
+                <td>Maru</td>
+                <td>part20@gmail.com</td>
+                <td>998557h4455</td>
+            </tr>
+            <tr>
+                <td>Prince</td>
+                <td>Vekariya</td>
+                <td>prrince20@gmail.com</td>
+                <td>9552774455</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

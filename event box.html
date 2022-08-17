@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#hide").click(function() {
+                $("input").hide();
+            });
+            $("#show").click(function() {
+                $("input").show();
+            });
+        });
+        $(document).ready(function() {
+            $("textname").focus(function() {});
+        });
+        $(document).ready(function() {
+            $("textemail").focus(function() {
+
+            });
+        });
+        $(document).ready(function() {
+            $("textage").focus(function() {
+
+            });
+        });
+        $(document).ready(function() {
+            $("textcontect no").focus(function() {
+
+            });
+        });
+        $(document).ready(function() {
+            $("textbirthdate").focus(function() {
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <hr>Name: <input type="text" id="textname" name="name"><br><br>
+    <hr>Email: <input type="text" id="textemail" name="email"><br><br>
+    <hr>Age : <input type="number" id="textage" name="age"><br><br>
+    <hr>Conetect No : <input type="text" name="contect no" id="textcontect no"><br><br>
+    <hr>Birth Date : <input type="date" name="birth date" id="textbirthdate"><br><br>
+    <hr>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+
+</body>
+
+</html>

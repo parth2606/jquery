@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                var div = $("div");
+                div.animate({
+                    left: '500px'
+                }, "slow");
+                div.animate({
+                    fontSize: '5em'
+                }, "slow");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>Start Animation</button>
+    <p>VISHVA PRAJAPATI...!!! ANIMATION </p>
+
+    <div style="background:pink;height:150px;width:300px;position:absolute;">VISHU</div>
+
+</body>
+
+</html>

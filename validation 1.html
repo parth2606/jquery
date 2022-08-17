@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISHVA</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        span {
+            color: brown;
+        }
+        
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 200px;
+        }
+        
+        .v1 {
+            text-align: center;
+            color: blueviolet;
+            text-size-adjust: 10px;
+        }
+    </style>
+    <script>
+        var $NameRegEx = /^([a-zA-Z]{2,20})$/;
+        var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/;
+        var $AgeRegEx = /^([0-9]{2})$/;
+        var $weightRegEx = /^([0-9]{2})$/;
+
+
+        $(document).ready(function() {
+
+            var TxtNameFlag = false,
+                TxtContactNoFlag = false,
+                TxtEmailIdFlag = false,
+                TxtContactMsgFlag = false;
+
+            $("#Name").blur(function() {
+                $("#TxtNameValidation").empty();
+                if ($(this).val() == "" || $(this).val() == null) {
+                    $("#TxtNameValidation").html("(*) Firstname required..!!");
+                } else {
+                    if (!$(this).val().match($NameRegEx)) {
+                        $("#TxtNameValidation").html("(*) Invalid firstname..!!");
+                    }
+                }
+            });
+            $("#Name").keypress(function(e) {
+                var flag = false;
+                $("#TxtNameValidation").empty();
+                ((e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 122)) ?
+                flag = true: (flag = false, $("#TxtNameValidation").html("Invalid keypress..!!"))
+                return flag;
+            });
+
+            $("#BtnSubmit").click(function() {
+                $("#TxtNameValidation").empty();
+                if ($("#Name").val() == "" || $("#Name").val() == null) {
+                    $("#TxtNameValidation").html("(*) Firstname required..!!");
+                    TxtNameFlag = false;
+                } else {
+                    if (!$("#Name").val().match($FNameLNameRegEx)) {
+                        $("#TxtNameValidation").html("(*) Invalid firstname..!!");
+                        TxtNameFlag = false;
+                    } else {
+                        TxtNameFlag = true;
+                    }
+                }
+                $("#TxtContactNoValidation").empty();
+                if ($("#TxtContactNo").val() == "" || $("#TxtContactNo").val() == null) {
+                    $("#TxtContactNoValidation").html("(*) Contact no. required..!!");
+                    TxtContactNoFlag = false;
+                } else {
+                    if (!$("#TxtContactNo").val().match($ConNoRegEx)) {
+                        $("#TxtContactNoValidation").html("(*) Invalid contact no..!!");
+                        TxtContactNoFlag = false;
+                    } else {
+                        TxtContactNoFlag = true;
+                    }
+                }
+                $("#TxtEmailIdValidation").empty();
+                if ($("#TxtEmailId").val() == "" || $("#TxtEmailId").val() == null) {
+                    $("#TxtEmailIdValidation").html("(*) Email id required..!!");
+                    TxtEmailIdFlag = false;
+                } else {
+                    if (!$("#TxtEmailId").val().match($EmailIdRegEx)) {
+                        $("#TxtEmailIdValidation").html("(*) Invalid email id..!!");
+                        TxtEmailIdFlag = false;
+                    } else {
+                        TxtEmailIdFlag = true;
+                    }
+                }
+                $("#TxtContactMsgValidation").empty();
+                if ($("#TxtContactMsg").val() == "" || $("#TxtContactMsg").val() == null) {
+                    $("#TxtContactMsgValidation").html("(*) Contact no. required..!!");
+                    TxtContactMsgFlag = false;
+                } else {
+                    if ($("#TxtContactMsg").val().length > 3000) {
+                        $("#TxtContactMsgValidation").html("(*) Invalid contact message..!!");
+                        TxtContactMsgFlag = false;
+                    } else {
+                        TxtContactMsgFlag = true;
+                    }
+                }
+                if (TxtNameFlag == true && TxtContactNoFlag == true && TxtEmailIdFlag == true && TxtContactMsgFlag == true) {
+                    alert("Form submitted successfully..!!");
+                } else {
+                    alert("Invalid input..!!");
+                }
+            });
+
+        });
+
+
+        ;
+    </script>
+</head>
+<center>
+
+    <body background=" C:\Users\VISHVA\Desktop\website\image 4.jpg ">
+        <h2 class="v1">Validation Form</h2>
+        <form id="basic-form" action="" method="post">
+            <p>
+                <label for="Name" id="TxtName ">Name <span>*</span></label>
+                <br> <input id="Name" name="name" minlength="3" type="text">
+                <br><span id="TxtNameValidation"></span>
+            </p>
+            <p>
+                <label for="Age" id="TxtAge">Age <span>*</span></label>
+                <br> <input id="Age" name="Age" minlength="2" type="text">
+            </p>
+            <p>
+                <label for="email" id="#TxtEmailId">E-Mail <span>*</span></label>
+                <br> <input id="email" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="weight" id="#Txtweight">weight <span>*</span></label>
+                <br> <input id="weight" type="weight" name="weight" required>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="SUBMIT">
+            </p>
+
+        </form>
+    </body>
+</center>
+
+</html>
